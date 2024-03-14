@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+{% block head %}
+  <title>MimiCar</title>
+{% endblock head %}
+
+{% block content %}
+  
+  <main class="container flex mx-auto mt-6">
+    {% include "components/sidebar.html" %}
+    
+    <div class="flex-1 p-4 overflow-x-hidden md:p-0 md:ps-6">
+      {% include "components/search_bar.html" %}
+      
+      <div class="my-2 text-xl md:my-4 md:text-2xl">
+        {% if query %}
+          <h1>{{ cars|length }} search result found for "{{query}}"</h1>
+        {% endif %}
+      </div>
+      
+      {% include "components/car_catalog.html" %}
+      
+    </div>
+  </main>
+  
+{% endblock content %}

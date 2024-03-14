@@ -1,0 +1,41 @@
+<!-- search bar section -->
+<section class="flex justify-between w-full gap-2">
+    <form action="{% url 'search_collection' %}" method="get">
+      <label for="default-search" class="mb-2 text-sm font-medium text-white sr-only">Search</label>
+      <div class="relative">
+        <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-4 md:ps-6">
+          <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
+        </div>
+        <input type="search" id="default-search"
+        class="block w-full p-3 text-sm text-white placeholder-white border-gray-600 md:p-4 rounded-xl ps-12 md:ps-14 bg-dark focus:border-orange-300 focus:ring-orange-300"
+        placeholder="Search Cars, Brand..." value="{{query}}" required name="q" />
+      </div>
+    </form>
+
+    <div>
+      <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+        class="inline-flex items-center p-3 text-xs font-medium text-center border md:text-sm md:px-6 md:py-3 rounded-xl text-dark border-dark"
+        type="button">Sort By <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 1 4 4 4-4" />
+        </svg>
+      </button>
+
+      <!-- Dropdown menu -->
+      <div id="dropdownHover"
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Date</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end of search bar section -->

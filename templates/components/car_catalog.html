@@ -1,0 +1,23 @@
+{% load humanize %}
+<section class="grid justify-between mt-6 gap-x-1 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+    
+  {% for car in cars %}
+    <div class="relative max-w-full p-2 mb-3 text-white rounded-3xl bg-dark w-fit justify-self-center" style="width: 300px;">
+      <img class="mb-4 rounded-3xl h-[230px] w-full object-cover" src="{{ car.main_image }}" alt="" />
+      <div class="px-3">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <h3 class="text-lg leading-5">{{ car.title }}</h3>
+          <span class="flex items-center justify-center w-10 h-10 border rounded-full"><i class="bi bi-cart3"></i></span>
+        </div>
+        <p class="mb-3 text-sm text-gray-200">Production: {{ car.year }} </p>
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-2xl text-orange-400 font-ultra">
+            <span class="font-bold">₦</span> {{ car.price|floatformat:0|intcomma }}
+          </p>
+          <a href="{% url 'car_detail' car_id=car.id %}" class="absolute bottom-0 right-0 px-6 py-3 bg-orange-500 rounded-3xl"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  
+</section>

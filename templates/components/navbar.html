@@ -1,0 +1,52 @@
+{% load custom_filters %}
+<nav class="sticky top-0 z-20 w-full bg-white border-b border-gray-200 start-0 ">
+    <div class="container flex flex-wrap items-center justify-between p-4 mx-auto">
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap ">MimiCars</span>
+      </a>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto order-3 md:order-[initial]"
+        id="navbar-sticky">
+        <ul
+          class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+          <li>
+            <a href="/"
+              class="block px-3 py-2 text-gray-900 bg-blue-700 rounded md:bg-transparent {% if request|path_class:'/(?:car_details/(?P<id>\d+)/)?$' %} md:text-orange-400 {% endif %}  md:hover:text-orange-400 md:p-0"
+              aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="/collection"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent {% if request|path_class:'/collection/' %} md:text-orange-400 {% endif %} md:hover:text-orange-400 md:p-0">Collection</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-400 md:p-0">Service</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-400 md:p-0">About
+              Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button type="button"
+          class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-dark focus:ring-4 focus:outline-none focus:ring-orange-200">
+          {% if request.user.is_authenticated %}
+          <img class="border-2 border-white rounded-full" src="/static/assets/profile-picture.jpg" width="30px" alt=""> Iran
+          dedek
+          {% else %}
+          <img class="border-2 border-white rounded-full" src="/static/assets/profile-picture.jpg" width="30px" alt=""> anonymus
+          {% endif %}
+        </button>
+        <button data-collapse-toggle="navbar-sticky" type="button"
+          class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+          aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
