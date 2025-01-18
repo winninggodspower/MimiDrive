@@ -2,7 +2,7 @@
 <nav class="sticky top-0 z-20 w-full bg-white border-b border-gray-200 start-0 ">
     <div class="container flex flex-wrap items-center justify-between p-4 mx-auto">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap ">MimiCars</span>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap ">MimiAuto</span>
       </a>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto order-3 md:order-[initial]"
         id="navbar-sticky">
@@ -10,7 +10,7 @@
           class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
           <li>
             <a href="/"
-              class="block px-3 py-2 text-gray-900 bg-blue-700 rounded md:bg-transparent {% if request|path_class:'/(?:car_details/(?P<id>\d+)/)?$' %} md:text-orange-400 {% endif %}  md:hover:text-orange-400 md:p-0"
+              class="block px-3 py-2 text-white bg-orange-400 rounded md:bg-transparent {% if request|path_class:'/(?:car_details/(?P<id>\d+)/)?$' %} md:text-orange-400 {% endif %}  md:hover:text-orange-400 md:p-0"
               aria-current="page">Home</a>
           </li>
           <li>
@@ -23,20 +23,17 @@
           </li>
           <li>
             <a href="#"
-              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-400 md:p-0">About
-              Us</a>
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-400 md:p-0">About</a>
           </li>
         </ul>
       </div>
       <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
         <button type="button"
-          class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-dark focus:ring-4 focus:outline-none focus:ring-orange-200">
-          {% if request.user.is_authenticated %}
-          <img class="border-2 border-white rounded-full" src="/static/assets/profile-picture.jpg" width="30px" alt=""> Iran
-          dedek
-          {% else %}
-          <img class="border-2 border-white rounded-full" src="/static/assets/profile-picture.jpg" width="30px" alt=""> anonymus
-          {% endif %}
+          class="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-dark focus:ring-4 focus:outline-none focus:ring-orange-200">
+          <a href="tel:+1234567890" class="flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+            <i class="fas fa-phone"></i>
+            <span class="sr-only">Call us</span>
+          </a>
         </button>
         <button data-collapse-toggle="navbar-sticky" type="button"
           class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
@@ -47,6 +44,6 @@
               d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
-      </div>
+    </div>
     </div>
   </nav>

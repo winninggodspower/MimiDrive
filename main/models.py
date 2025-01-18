@@ -37,7 +37,7 @@ class Car(models.Model):
     features = models.ManyToManyField('Feature', blank=True, null=True)
 
     def __str__(self):
-        return f"{self.make} {self.model}"
+        return f"{self.title}"
 
 
 class Feature(models.Model):

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'compressor',  
     'django.contrib.humanize',
     'main.apps.MainConfig',
+    # 'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'Mimi_Cars.urls'

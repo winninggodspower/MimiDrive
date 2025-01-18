@@ -5,7 +5,10 @@
 __pycache__
 db.sqlite3
 media
+package-lock.json
+node_modules/
 
+populate_cars.py
 # Backup files # 
 *.bak 
 
